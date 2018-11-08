@@ -26,24 +26,13 @@
   </nav>
   <!--Navbar End-->
   <img class="header_img mx-auto d-block" src="{{url_for('static', filename='images/catbook_logo.jpg')}}">
-  <div class="row">
-      {% for cat in cats%}
-      <div class="col-sm-4">
-        <div class="card">
-            <div class="card">
-                <img class="card-img-top" src="{{url_for('static', filename='images/cat1.jpg')}}">
-                <div class="card-body">
-                  <h5 class="card-title">{{cat.name}}</h5>
-                  <p class="card-text">Votes: {{cat.vote}}</p>
-                  <a href="cats/{{cat.id}}" class="btn btn-primary">View details</a>
-                </div>
-              </div>
-        </div>
-      </div>
-      {% endfor%}
-    </div>
-    <a href="/addcat" class="btn btn-primary">add a new cat!</a>
-  
+  <form action="/addcat" method="POST">
+    <input type="text" name="name" placeholder="your cat's Name">
+    <br>
+    <input type="submit" value="add your cat">
+</form>
+
+
   <!--BOOTSTRAP Javascript import-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
