@@ -25,10 +25,13 @@
     </form>
   </nav>
   <!--Navbar End-->
-  <img class="header_img mx-auto d-block" src="{{url_for('static', filename='images/catbook_logo.jpg')}}">
+  <img class="header_img mx-auto d-block" src="{{cat.link}}">
   <h2>the name of the cat: {{cat.name}}</h2>
-  <h2>votes for this cat: 0</h2>
-  <button type="button" class="btn btn-primary">Vote for this cat! </button>
+  <h2>votes for this cat: {{cat.vote}}</h2>
+  <br>
+  <form action="/cats/{{cat.id}}" method="POST">
+    <input type="submit" value="vote for this cat">
+  </form>
 
   <!--BOOTSTRAP Javascript import-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
